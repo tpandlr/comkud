@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Suspense } from "react";
 import { QuoteForm } from "@/components/QuoteForm";
 import { nextSteps, quotationEmail } from "@/lib/content";
 
@@ -9,10 +10,16 @@ export const metadata: Metadata = {
     "Request a quotation from COMKUD Analytical Solutions. Zimbabwe environmental consultancy. Proposal within 48 hours.",
 };
 
-export default async function ContactPage(props: PageProps<"/contact">) {
-  const searchParams = await props.searchParams;
-  const sent = searchParams.sent === "1";
+async function QuoteFormWithStatus({
+  searchParams,
+}: {
+  searchParams: PageProps<"/contact">["searchParams"];
+}) {
+  const params = await searchParams;
+  return <QuoteForm sent={params.sent === "1"} />;
+}
 
+export default function ContactPage(props: PageProps<"/contact">) {
   return (
     <main>
       <section className="mx-auto max-w-[1230px] px-7 py-16 md:py-20">
@@ -72,7 +79,9 @@ export default async function ContactPage(props: PageProps<"/contact">) {
 
       <section className="border-t border-slate-100 bg-surface-container-low">
         <div className="mx-auto grid max-w-[1230px] items-start gap-10 px-7 py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-          <QuoteForm sent={sent} />
+          <Suspense fallback={<QuoteForm />}>
+            <QuoteFormWithStatus searchParams={props.searchParams} />
+          </Suspense>
           <div>
             <h2 className="font-headline text-[36px] font-semibold text-primary">Next steps</h2>
             <ol className="mt-8 space-y-5">
