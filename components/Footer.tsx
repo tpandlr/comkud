@@ -1,17 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 import { QuoteCta } from "@/components/QuoteCta";
-import { navLinks, quotationEmail, services } from "@/lib/content";
+import { companyAddress, navLinks, quotationEmail, services, tagline } from "@/lib/content";
 
 export function Footer() {
   return (
     <footer className="bg-footer text-white">
       <div className="mx-auto grid max-w-[1230px] grid-cols-1 gap-12 px-7 py-16 md:grid-cols-3">
         <div>
-          <p className="font-headline text-[22px] font-semibold">COMKUD Analytical Solutions</p>
-          <p className="mt-3 text-[14px] text-white/70">Zimbabwe</p>
-          <p className="mt-4 text-[14px] text-white/70">
-            Environmental Monitoring · Compliance · Analytical Services
-          </p>
+          <Image
+            src="/images/logo.png"
+            alt="COMKUD Analytical Solutions"
+            width={835}
+            height={278}
+            className="h-10 w-auto brightness-0 invert md:h-11"
+          />
+          <p className="mt-4 text-[14px] text-white/70">{tagline}</p>
+          <p className="mt-4 text-[14px] text-white/70">{companyAddress}</p>
         </div>
         <div>
           <p className="text-[13px] font-medium text-white/80">Services</p>
@@ -44,7 +49,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <p className="mx-auto max-w-[1230px] px-7 py-5 text-[12px] text-white/50">
-          COMKUD Analytical Solutions · Zimbabwe · comkud.co.zw
+          © 2026 Comkud Analytical Solutions. All rights reserved.
         </p>
       </div>
     </footer>

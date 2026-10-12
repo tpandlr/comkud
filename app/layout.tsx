@@ -12,7 +12,10 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "COMKUD Analytical Solutions",
   description:
-    "Zimbabwe’s Environmental Monitoring Partner. Environmental Monitoring · Compliance · Analytical Services.",
+    "Laboratory testing, chemical supply, equipment installation and technical consulting for Zimbabwean industry.",
+  icons: {
+    icon: "/images/logo.jpg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

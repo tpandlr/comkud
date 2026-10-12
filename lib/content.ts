@@ -2,48 +2,110 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/how-we-work", label: "How We Work" },
-  { href: "/why-us", label: "Why Us" },
-  { href: "/compliance", label: "Compliance" },
+  { href: "/industries", label: "Industries" },
+  { href: "/why-us", label: "Why Comkud" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const companyAddress = "7557 Millennium Park, Chinhoyi, Zimbabwe";
+export const tagline = "Precision analysis. Reliable results.";
+
 export const services = [
   {
-    icon: "air",
-    title: "Air Emissions Monitoring",
-    summary:
-      "Measurement of airborne pollutants released from industrial and mobile emission sources, with full reporting.",
+    icon: "biotech",
+    title: "Laboratory Testing",
+    summary: "Analysis of samples to verify quality, composition and compliance.",
+    points: [
+      "Chemical analysis of raw materials and finished products",
+      "Quality control testing",
+      "Clear, well-documented test reports",
+    ],
+  },
+  {
+    icon: "science",
+    title: "Chemical Production & Supply",
+    summary: "Chemical products matched to your application, with consistent quality and dependable supply.",
+    points: [
+      "Product guidance and safe-handling information",
+      "Custom requirements on request",
+    ],
+  },
+  {
+    icon: "precision_manufacturing",
+    title: "Equipment & Installation",
+    summary: "Support for establishing and maintaining a working analytical environment.",
+    points: [
+      "Advice on and sourcing of laboratory equipment",
+      "Installation and commissioning",
+      "Staff familiarisation on equipment use",
+    ],
+  },
+  {
+    icon: "support_agent",
+    title: "Technical Consulting",
+    summary: "Experienced guidance to improve your testing, quality and compliance.",
+    points: [
+      "Laboratory set-up and workflow planning",
+      "Test method selection and quality control practices",
+      "Process and quality improvement reviews",
+      "Training for technical teams",
+    ],
+  },
+] as const;
+
+export const valuePoints = [
+  {
+    icon: "check_circle",
+    title: "Accurate",
+    text: "Methodical testing you can base decisions on.",
+  },
+  {
+    icon: "schedule",
+    title: "Responsive",
+    text: "Practical turnaround that respects your production schedule.",
+  },
+  {
+    icon: "location_on",
+    title: "Local, Capable",
+    text: "Analytical expertise based in Zimbabwe, serving your operation directly.",
+  },
+] as const;
+
+export const industries = [
+  {
+    icon: "landscape",
+    title: "Mining",
+    text: "Sample analysis and quality data to support operations and decision-making.",
+  },
+  {
+    icon: "agriculture",
+    title: "Agriculture",
+    text: "Testing and chemical support for inputs, produce and soil/water quality.",
   },
   {
     icon: "factory",
-    title: "Stack Emissions Testing",
-    summary:
-      "On-site flue gas analysis from industrial stacks to verify compliance with national emission limits.",
+    title: "Manufacturing",
+    text: "Raw material and product quality control to keep output consistent.",
   },
   {
-    icon: "cloud",
-    title: "Ambient Air Quality Monitoring",
-    summary:
-      "Continuous and periodic sampling of surrounding air quality to assess community and site-level exposure.",
+    icon: "restaurant",
+    title: "Food Processing",
+    text: "Analytical support for safety, quality and process consistency.",
   },
   {
-    icon: "assignment",
-    title: "Environmental Audits",
-    summary:
-      "Systematic review and evaluation of a facility’s environmental performance against legal requirements.",
+    icon: "medication",
+    title: "Pharmaceuticals",
+    text: "Precise analysis and technical support in a quality-critical sector.",
   },
   {
-    icon: "map",
-    title: "Environmental Impact Assessment (EIA)",
-    summary:
-      "Environmental Impact Assessment services for proposed projects requiring approval from regulatory bodies.",
+    icon: "bolt",
+    title: "Energy",
+    text: "Chemical and analytical support for energy-related operations.",
   },
   {
-    icon: "verified",
-    title: "Compliance Assessments",
-    summary:
-      "Detailed gap analysis against EMA standards and national regulations to keep your operations on track.",
+    icon: "school",
+    title: "Research & Education",
+    text: "Reagents, equipment support and technical collaboration.",
   },
 ] as const;
 
@@ -51,79 +113,66 @@ export const processSteps = [
   {
     number: "01",
     icon: "forum",
-    title: "Initial Consultation",
-    text: "We meet with your team to understand your operations, compliance needs, and the scope of services required.",
+    title: "Tell us your need",
+    text: "Call, email or use the quote form.",
   },
   {
     number: "02",
-    icon: "pin_drop",
-    title: "Site Assessment",
-    text: "Our specialists conduct a preliminary site visit to plan sampling locations, access requirements, and logistics.",
+    icon: "request_quote",
+    title: "We scope and quote",
+    text: "Clear scope, pricing and timelines.",
   },
   {
     number: "03",
     icon: "science",
-    title: "Field Testing & Sampling",
-    text: "We deploy calibrated equipment on-site and carry out rigorous environmental measurements per standard methods.",
+    title: "We deliver",
+    text: "Testing, supply or support carried out to agreed standards.",
   },
   {
     number: "04",
-    icon: "biotech",
-    title: "Laboratory Analysis",
-    text: "Collected samples are analysed using accredited analytical procedures and quality-assured protocols.",
-  },
-  {
-    number: "05",
-    icon: "analytics",
-    title: "Data Interpretation",
-    text: "Our experts interpret results against applicable emission limits and environmental quality standards.",
-  },
-  {
-    number: "06",
     icon: "description",
-    title: "Certified Reporting",
-    text: "We deliver comprehensive, professionally prepared reports ready for EMA submission and regulatory review.",
+    title: "You receive results",
+    text: "Documented outcomes, with follow-up advice if you need it.",
   },
 ] as const;
 
 export const advantages = [
   {
-    icon: "verified",
-    title: "Accurate & Reliable Reporting",
-    text: "Calibrated instruments and rigorous QA protocols deliver data you can trust and submit with confidence.",
-  },
-  {
-    icon: "engineering",
-    title: "Certified Professional Team",
-    text: "Our analysts are trained in EPA-referenced test methods and fully conversant with EMA regulations.",
-  },
-  {
-    icon: "gavel",
-    title: "Full Regulatory Compliance",
-    text: "We align every deliverable with current EMA standards and Zimbabwe’s environmental legal framework.",
+    icon: "science",
+    title: "Scientific rigour",
+    text: "Structured, careful analytical practice.",
   },
   {
     icon: "account_tree",
-    title: "End-to-End Service",
-    text: "From site assessment through to certified report submission — we manage the entire process for you.",
+    title: "Integrated offering",
+    text: "Testing, chemicals, equipment and consulting from one partner.",
   },
   {
-    icon: "eco",
-    title: "Sustainable Environmental Values",
-    text: "We operate with genuine commitment to Zimbabwe’s environmental future — not just compliance checkboxes.",
+    icon: "handyman",
+    title: "Practical focus",
+    text: "Results and advice aimed at real operational decisions.",
   },
   {
-    icon: "badge",
-    title: "EMA Licensing Facilitation",
-    text: "We actively assist clients in obtaining and maintaining their EMA operating licences and certificates.",
+    icon: "location_on",
+    title: "Local presence",
+    text: "Based in Chinhoyi, accessible and accountable to Zimbabwean clients.",
+  },
+  {
+    icon: "chat",
+    title: "Clear communication",
+    text: "Plain-language reporting and straightforward quotes.",
+  },
+  {
+    icon: "verified_user",
+    title: "Commitment to safety and quality",
+    text: "Safe practice for our people, clients and environment.",
   },
 ] as const;
 
 export const whoWeAre = {
   title: "Who we are",
   paragraphs: [
-    "COMKUD Analytical Solutions is an environmental and analytical consultancy company focused on sustainability, industrial monitoring, and environmental compliance.",
-    "We partner with industries across Zimbabwe to deliver accurate, reliable, and regulation-aligned environmental data — enabling our clients to operate responsibly, avoid penalties, and contribute to a cleaner environment.",
+    "Comkud Analytical Solutions is a Zimbabwean analytical and chemical solutions company based at 7557 Millennium Park, Chinhoyi. We exist to give businesses dependable scientific data and practical technical support, so they can operate with confidence, meet quality requirements and improve their processes.",
   ],
 } as const;
 
@@ -131,93 +180,80 @@ export const missionVision = [
   {
     icon: "flag",
     label: "Our mission",
-    text: "To deliver accurate environmental and emissions analysis solutions that help industries operate efficiently, remain compliant, and protect the environment.",
+    text: "To deliver accurate laboratory analysis, quality chemical products and expert technical support that help our clients improve quality, efficiency and compliance, while building lasting relationships grounded in trust.",
   },
   {
     icon: "visibility",
     label: "Our vision",
-    text: "To become Zimbabwe’s leading analytical and environmental compliance solutions provider, trusted for innovation, precision, and sustainable industrial impact.",
+    text: "To be a leading analytical and chemical solutions partner, recognised across Zimbabwe and beyond for scientific precision, integrity and innovation.",
   },
 ] as const;
 
 export const commitments = [
   {
     icon: "straighten",
-    title: "Accuracy",
-    text: "Every instrument is calibrated. Every result is verified.",
-  },
-  {
-    icon: "handshake",
-    title: "Professionalism",
-    text: "On-time delivery, clear communication, and expert guidance.",
+    title: "Precision",
+    text: "We treat every sample and every result with care.",
   },
   {
     icon: "balance",
     title: "Integrity",
-    text: "Honest reporting — we never compromise data for convenience.",
+    text: "Honest reporting, whatever the outcome.",
   },
   {
-    icon: "eco",
-    title: "Sustainability",
-    text: "We care about Zimbabwe’s environment — it is our business and our responsibility.",
+    icon: "lightbulb",
+    title: "Innovation",
+    text: "Continually improving methods and solutions.",
+  },
+  {
+    icon: "handshake",
+    title: "Service",
+    text: "Your operational needs shape how we work.",
+  },
+  {
+    icon: "health_and_safety",
+    title: "Safety & Responsibility",
+    text: "Safe practice for our people, clients and environment.",
   },
 ] as const;
 
 export const quotationEmail = "info@comkud.co.zw";
 export const quotationHref = "/contact#quotation";
-export const quotationLabel = "Request a Quotation";
+export const quotationLabel = "Request a Quote";
 
-export const standards = [
+export const nextSteps = processSteps.map((step) => ({
+  number: step.number.replace(/^0/, ""),
+  title: step.title,
+  text: step.text,
+}));
+
+export const equipmentPhotos = [
   {
-    icon: "account_balance",
-    title: "EMA",
-    subtitle: "Environmental Management Agency",
-    text: "The primary regulatory body under which we operate. All our services align with EMA emission standards, monitoring protocols, and licence requirements.",
+    src: "/images/s360.jpg",
+    alt: "S360 multi-gas analyser with mobile printer",
+    caption: "S360",
   },
   {
-    icon: "gavel",
-    title: "SI 72/2009",
-    subtitle: "Atmospheric Pollution Control",
-    text: "The statutory instrument governing atmospheric emissions in Zimbabwe. Our stack testing and air monitoring services are designed to verify compliance with these limits.",
-  },
-  {
-    icon: "public",
-    title: "WHO Air Quality Guidelines",
-    subtitle: "World Health Organization",
-    text: "We reference WHO Air Quality Guidelines for ambient air quality assessments where national standards require supplementary guidance.",
-  },
-  {
-    icon: "science",
-    title: "EPA Reference Methods",
-    subtitle: "RM-1 through RM-9",
-    text: "Our field testing follows EPA Reference Methods (RM-1 through RM-9) for stack sampling — internationally recognised and accepted by EMA.",
+    src: "/images/nha-6000.jpg",
+    alt: "Nanhua NHA-6000 automotive emission analyser",
+    caption: "EMA vehicle exhaust accredited",
   },
 ] as const;
 
-export const nextSteps = [
+export const fieldPhotos = [
   {
-    number: "1",
-    title: "Contact Our Team",
-    text: "Reach out to schedule your initial consultation at no cost.",
+    src: "/images/stack-sampling.jpg",
+    alt: "Technician sampling stack emissions on site",
+    caption: "Stack sampling",
   },
   {
-    number: "2",
-    title: "Site Assessment Visit",
-    text: "We visit your facility to scope requirements and plan the testing.",
+    src: "/images/field-analysis.jpg",
+    alt: "Field analysis with a portable analyser",
+    caption: "Field analysis",
   },
   {
-    number: "3",
-    title: "Receive Your Proposal",
-    text: "We deliver a detailed, itemised proposal within 48 hours.",
-  },
-  {
-    number: "4",
-    title: "Confirm & Schedule",
-    text: "Once approved, we schedule your testing dates at your convenience.",
-  },
-  {
-    number: "5",
-    title: "Testing & Report",
-    text: "We conduct testing and deliver your certified compliance report.",
+    src: "/images/stack-probe.jpg",
+    alt: "On-site stack probe measurement",
+    caption: "On-site testing",
   },
 ] as const;

@@ -6,9 +6,8 @@ import { QuoteCta } from "@/components/QuoteCta";
 import { processSteps } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "How We Work | COMKUD Analytical Solutions",
-  description:
-    "From enquiry to certified report: consultation, site assessment, field testing, laboratory analysis, data interpretation, and certified reporting.",
+  title: "How It Works | COMKUD Analytical Solutions",
+  description: "Tell us your need, we scope and quote, we deliver, you receive results.",
 };
 
 const iconStyle = { fontVariationSettings: "'FILL' 1" } as const;
@@ -20,10 +19,10 @@ export default function HowWeWorkPage() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <h1 className="font-headline text-[44px] font-semibold leading-[1.15] text-primary md:text-[52px]">
-              How we work
+              How it works
             </h1>
             <p className="mt-6 text-[16px] text-slate-500">
-              From enquiry to certified report — a seamless, professional experience.
+              Tell us what you need to test, make or measure. We’ll tell you how we can help.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <QuoteCta />
@@ -36,11 +35,11 @@ export default function HowWeWorkPage() {
             </div>
           </div>
           <Image
-            src="/images/plant-night.jpg"
-            alt="Industrial facility"
-            width={1400}
-            height={900}
-            className="aspect-[16/11] w-full rounded-xl object-cover shadow-[0_12px_40px_rgba(11,58,130,0.12)]"
+            src="/images/stack-probe.jpg"
+            alt="On-site stack probe measurement"
+            width={900}
+            height={1200}
+            className="aspect-[16/11] w-full rounded-xl object-cover object-[center_25%] shadow-[0_12px_40px_rgba(11,58,130,0.12)]"
             priority
           />
         </div>
@@ -49,12 +48,12 @@ export default function HowWeWorkPage() {
       <section className="border-t border-slate-100 bg-surface-container-low">
         <div className="mx-auto max-w-[1230px] px-7 py-20">
           <h2 className="font-headline text-[36px] font-semibold text-primary md:text-[40px]">
-            Six steps to a certified report
+            Four steps
           </h2>
           <p className="mt-3 max-w-2xl text-[16px] text-slate-500">
-            Consultation, site assessment, field testing, laboratory analysis, interpretation, and certified reporting.
+            From first contact to documented results.
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
               <article key={step.number} className="rounded-xl border border-slate-200 bg-white p-7">
                 <div className="flex items-center justify-between">
@@ -75,7 +74,7 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      <CtaBand title="Ready to request a quotation?" />
+      <CtaBand title="Need a reliable analytical partner?" />
     </main>
   );
 }

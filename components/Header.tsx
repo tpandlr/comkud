@@ -18,7 +18,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white">
-      <div className="mx-auto flex w-full max-w-[1230px] items-center justify-between px-7 py-4">
+      <div className="mx-auto flex w-full max-w-[1230px] items-center justify-between gap-3 px-5 py-3 md:px-7 md:py-4">
         <BrandMark onClick={() => setOpen(false)} />
 
         <div className="hidden items-center gap-7 lg:flex">
