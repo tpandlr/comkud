@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Suspense } from "react";
 import { QuoteForm } from "@/components/QuoteForm";
-import { nextSteps, quotationEmail } from "@/lib/content";
+import { companyAddress, nextSteps, quotationEmail } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Contact | COMKUD Analytical Solutions",
+  title: "Contact Comkud Analytical Solutions | Chinhoyi",
   description:
-    "Request a quotation from COMKUD Analytical Solutions. Zimbabwe environmental consultancy. Proposal within 48 hours.",
+    "Request a quote or ask a question. Visit us at 7557 Millennium Park, Chinhoyi.",
 };
 
 async function QuoteFormWithStatus({
@@ -26,17 +26,18 @@ export default function ContactPage(props: PageProps<"/contact">) {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <h1 className="font-headline text-[44px] font-semibold leading-[1.15] text-primary md:text-[52px]">
-              Ready to ensure your compliance?
+              Get in touch
             </h1>
             <p className="mt-6 text-[16px] text-slate-500">
-              Environmental & Analytical Consultancy · Zimbabwe
+              Have a sample to test, a product to source or a technical question?
+              We’d like to hear from you.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="#quotation"
                 className="rounded-md bg-primary px-6 py-2.5 text-[14px] font-medium text-white"
               >
-                Request a Quotation
+                Request a Quote
               </a>
               <a
                 href={`mailto:${quotationEmail}`}
@@ -47,22 +48,18 @@ export default function ContactPage(props: PageProps<"/contact">) {
             </div>
             <dl className="mt-10 grid gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 text-[14px] sm:grid-cols-2">
               <div className="bg-white p-4">
-                <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Industry</dt>
-                <dd className="mt-1.5 text-primary">Environmental & Analytical Consultancy</dd>
+                <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Address</dt>
+                <dd className="mt-1.5 text-primary">{companyAddress}</dd>
               </div>
               <div className="bg-white p-4">
-                <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Country</dt>
-                <dd className="mt-1.5 text-primary">Zimbabwe</dd>
+                <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Email</dt>
+                <dd className="mt-1.5 text-primary">{quotationEmail}</dd>
               </div>
-              <div className="bg-white p-4">
+              <div className="bg-white p-4 sm:col-span-2">
                 <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Services</dt>
                 <dd className="mt-1.5 text-primary">
-                  Air Emissions · Stack Testing · Ambient Air · EIA · Audits
+                  Laboratory Testing · Chemical Supply · Equipment & Installation · Consulting
                 </dd>
-              </div>
-              <div className="bg-white p-4">
-                <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Standards</dt>
-                <dd className="mt-1.5 text-primary">EMA / EPA / WHO</dd>
               </div>
             </dl>
           </div>
