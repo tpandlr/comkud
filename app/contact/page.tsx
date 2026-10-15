@@ -5,8 +5,8 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { companyAddress, nextSteps, quotationEmail } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Contact Comkud Analytical Solutions | Chinhoyi",
-  description: "Request a quote or ask a question. Visit us at 7557 Millennium Park, Chinhoyi.",
+  title: "Contact Comkud Analytical Solutions",
+  description: "Request a quote or ask a question. Visit us at 7557 Millennium Park, Zimbabwe.",
 };
 
 async function QuoteFormWithStatus({

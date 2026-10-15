@@ -7,7 +7,7 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const companyAddress = "7557 Millennium Park, Chinhoyi, Zimbabwe";
+export const companyAddress = "7557 Millennium Park, Zimbabwe";
 export const tagline = "Precision analysis. Reliable results.";
 
 export const services = [
@@ -155,7 +155,7 @@ export const advantages = [
   {
     icon: "location_on",
     title: "Local presence",
-    text: "Based in Chinhoyi, accessible and accountable to Zimbabwean clients.",
+    text: "Based in Zimbabwe, accessible and accountable to our clients.",
   },
   {
     icon: "chat",
@@ -172,7 +172,7 @@ export const advantages = [
 export const whoWeAre = {
   title: "Who we are",
   paragraphs: [
-    "Comkud Analytical Solutions is a Zimbabwean analytical and chemical solutions company based at 7557 Millennium Park, Chinhoyi. We exist to give businesses dependable scientific data and practical technical support, so they can operate with confidence, meet quality requirements and improve their processes.",
+    "Comkud Analytical Solutions is a Zimbabwean analytical and chemical solutions company based at 7557 Millennium Park. We exist to give businesses dependable scientific data and practical technical support, so they can operate with confidence, meet quality requirements and improve their processes.",
   ],
 } as const;
 

@@ -6,13 +6,13 @@ import { advantages, processSteps } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Why Comkud | COMKUD Analytical Solutions",
   description:
-    "Scientific rigour, an integrated offering, practical focus, local presence in Chinhoyi, and clear communication.",
+    "Scientific rigour, an integrated offering, practical focus, local presence in Zimbabwe, and clear communication.",
 };
 
 export default function WhyUsPage() {
   return (
     <main>
-      <PageHero title="Why Comkud" body="A practical analytical partner based in Chinhoyi." />
+      <PageHero title="Why Comkud" body="A practical analytical partner in Zimbabwe." />
 
       <section className="mx-auto max-w-[1320px] px-4 py-14 lg:px-10">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

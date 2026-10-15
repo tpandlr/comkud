@@ -6,13 +6,13 @@ import { commitments, companyAddress, missionVision, quotationEmail, whoWeAre } 
 export const metadata: Metadata = {
   title: "About Us | COMKUD Analytical Solutions",
   description:
-    "Learn about Comkud's vision, mission and values. Analytical and chemical expertise based in Chinhoyi.",
+    "Learn about Comkud's vision, mission and values. Analytical and chemical expertise in Zimbabwe.",
 };
 
 export default function AboutPage() {
   return (
     <main>
-      <PageHero title="About Us" body="Analytical and chemical expertise based in Chinhoyi." />
+      <PageHero title="About Us" body="Analytical and chemical expertise in Zimbabwe." />
 
       <section className="mx-auto max-w-[1320px] px-4 py-14 lg:px-10">
         <p className="eyebrow text-secondary">{whoWeAre.title}</p>

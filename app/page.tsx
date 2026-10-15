@@ -26,7 +26,7 @@ export default function Home() {
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
               <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-white/80">
-                Analytical & chemical solutions · Chinhoyi
+                Analytical & chemical solutions · Zimbabwe
               </p>
               <h1 className="font-headline mt-6 max-w-xl text-[34px] leading-[1.08] text-white sm:text-[44px] lg:text-[52px]">
                 <span className="block">Precision Analysis.</span>
@@ -35,7 +35,7 @@ export default function Home() {
               </h1>
               <p className="mt-5 max-w-lg text-[15px] leading-[1.65] text-white/70 sm:text-[16px]">
                 Laboratory testing, chemical solutions, equipment support and technical consulting
-                for Zimbabwe’s industries, from our base in Chinhoyi.
+                for Zimbabwe’s industries.
               </p>
               <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 <Link href="/services" className="btn btn-light">
