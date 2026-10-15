@@ -17,9 +17,17 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -32,6 +40,8 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  const overHero = !scrolled && !open;
 
   const drawer =
     mounted &&
@@ -93,9 +103,9 @@ export function Header() {
     );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-surface-container/60 bg-white shadow-sm">
+    <header className={`site-header ${scrolled || open ? "is-scrolled" : ""}`}>
       <div className="mx-auto flex h-16 w-full max-w-[1320px] items-center justify-between gap-3 px-4 md:h-20 lg:px-10">
-        <BrandMark onClick={() => setOpen(false)} />
+        <BrandMark inverted={overHero} onClick={() => setOpen(false)} />
 
         <div className="hidden items-center gap-8 lg:flex">
           <nav className="font-ui flex items-center gap-8">
@@ -106,23 +116,21 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   aria-current={active ? "page" : undefined}
-                  className={
-                    active
-                      ? "text-[13px] font-semibold tracking-tight text-primary"
-                      : "text-[13px] font-medium tracking-tight text-slate-500 hover:text-primary"
-                  }
+                  className={`nav-link text-[13px] tracking-tight ${
+                    active ? "is-active font-semibold" : "font-medium"
+                  }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
           </nav>
-          <QuoteCta variant="header" />
+          <QuoteCta variant={overHero ? "headerHero" : "header"} />
         </div>
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center lg:hidden"
+          className="menu-toggle inline-flex h-10 w-10 items-center justify-center lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-sidebar"

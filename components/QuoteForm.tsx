@@ -10,14 +10,14 @@ type QuoteFormProps = Readonly<{
 }>;
 
 const field =
-  "w-full min-w-0 rounded-md border border-slate-300 bg-white px-3 py-2.5 text-[14px] text-primary outline-none transition-colors focus:border-primary";
+  "w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3 text-[14px] text-primary outline-none transition-[border-color,box-shadow,background-color] duration-200 focus:border-action focus:bg-white focus:shadow-[0_0_0_4px_rgba(13,71,161,0.12)]";
 
 const selectField = `${field} appearance-none bg-[length:16px_16px] bg-[right_12px_center] bg-no-repeat pr-10`;
 
 export function QuoteForm({ sent = false }: QuoteFormProps) {
   if (sent) {
     return (
-      <div id="quotation" className="min-w-0 rounded-xl border border-slate-200 bg-white p-6 sm:p-8">
+      <div id="quotation" className="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-28px_rgba(15,40,78,0.35)] sm:p-8">
         <h3 className="font-headline text-[22px] font-semibold text-primary">Enquiry received</h3>
         <p className="mt-2 text-[14px] text-slate-500">
           Thank you. We’ve received your enquiry and will respond. You can also email{" "}
@@ -37,7 +37,7 @@ export function QuoteForm({ sent = false }: QuoteFormProps) {
       id="quotation"
       action={`https://formsubmit.co/${quotationEmail}`}
       method="POST"
-      className="min-w-0 rounded-xl border border-slate-200 bg-white p-6 sm:p-8"
+      className="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-28px_rgba(15,40,78,0.35)] sm:p-8"
     >
       <input type="hidden" name="_subject" value="Enquiry — COMKUD Analytical Solutions" />
       <input type="hidden" name="_template" value="table" />

@@ -219,24 +219,24 @@ export const commitments = [
 
 export const heroSlides = [
   {
-    src: "/images/stock-lab.jpg",
-    alt: "Analytical laboratory",
-    caption: "Laboratory analysis",
+    src: "/images/hero-factory.jpg",
+    alt: "Industrial machinery inside a factory",
+    caption: "Factory operations",
   },
   {
-    src: "/images/stock-plant.jpg",
-    alt: "Industrial plant",
-    caption: "Chemical production support",
+    src: "/images/hero-plant.jpg",
+    alt: "Manufacturing plant under a blue sky",
+    caption: "Manufacturing plants",
   },
   {
-    src: "/images/field-analysis.jpg",
-    alt: "Field analysis",
-    caption: "On-site field work",
+    src: "/images/hero-environment.jpg",
+    alt: "Industrial chimney over a forested landscape",
+    caption: "Environment & emissions",
   },
   {
-    src: "/images/s360.jpg",
-    alt: "S360 analyser",
-    caption: "S360 field analysis",
+    src: "/images/hero-manufacturing.jpg",
+    alt: "Aerial view of a manufacturing facility",
+    caption: "Industrial production",
   },
 ] as const;
 
@@ -265,18 +265,18 @@ export const equipmentPhotos = [
 
 export const fieldPhotos = [
   {
-    src: "/images/stack-sampling.jpg",
-    alt: "Technician sampling stack emissions on site",
-    caption: "Stack sampling",
+    src: "/images/field-engineer.jpg",
+    alt: "Factory operator in a blue worksuit and hard hat",
+    caption: "Plant operations",
   },
   {
-    src: "/images/field-analysis.jpg",
-    alt: "Field analysis with a portable analyser",
-    caption: "Field analysis",
+    src: "/images/field-ppe.jpg",
+    alt: "Production-line worker in hard hat and workwear",
+    caption: "Manufacturing floor",
   },
   {
-    src: "/images/stack-probe.jpg",
-    alt: "On-site stack probe measurement",
-    caption: "On-site testing",
+    src: "/images/field-sampling.jpg",
+    alt: "Plant workers in worksuits on the factory line",
+    caption: "Production support",
   },
 ] as const;

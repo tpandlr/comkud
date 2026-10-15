@@ -3,6 +3,8 @@ import Image from "next/image";
 import { CtaBand } from "@/components/CtaBand";
 import { HeroSlideBar, HeroStage } from "@/components/HeroSlideshow";
 import { QuoteCta } from "@/components/QuoteCta";
+import { Fade, SplitLine } from "@/components/MotionText";
+import { Reveal } from "@/components/Reveal";
 import {
   advantages,
   companyAddress,
@@ -22,31 +24,33 @@ export default function Home() {
     <main>
       <section className="relative flex min-h-[48vh] flex-col overflow-hidden bg-deep text-white lg:min-h-[580px]">
         <HeroStage>
-        <div className="relative z-10 mx-auto flex w-full max-w-[1320px] flex-1 flex-col justify-center px-4 pb-20 pt-14 lg:px-10 lg:pb-24 lg:pt-16">
+        <div className="relative z-10 mx-auto flex w-full max-w-[1320px] flex-1 flex-col justify-center px-4 pb-20 pt-24 lg:px-10 lg:pb-24 lg:pt-28">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
-              <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-white/80">
-                Analytical & chemical solutions · Zimbabwe
-              </p>
+              <Fade className="inline-flex">
+                <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-white/80">
+                  Analytical & chemical solutions · Zimbabwe
+                </p>
+              </Fade>
               <h1 className="font-headline mt-6 max-w-xl text-[34px] leading-[1.08] text-white sm:text-[44px] lg:text-[52px]">
-                <span className="block">Precision Analysis.</span>
-                <span className="block">Reliable Results.</span>
-                <span className="block">Real Confidence.</span>
+                <SplitLine as="span" className="block" text="Precision Analysis." delay={80} />
+                <SplitLine as="span" className="block" text="Reliable Results." delay={220} />
+                <SplitLine as="span" className="block" text="Real Confidence." delay={360} />
               </h1>
-              <p className="mt-5 max-w-lg text-[15px] leading-[1.65] text-white/70 sm:text-[16px]">
+              <Fade delay={520} className="mt-5 max-w-lg text-[15px] leading-[1.65] text-white/70 sm:text-[16px]">
                 Laboratory testing, chemical solutions, equipment support and technical consulting
                 for Zimbabwe’s industries.
-              </p>
-              <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+              </Fade>
+              <Fade delay={640} className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 <Link href="/services" className="btn btn-light">
                   Explore Our Services
                 </Link>
                 <QuoteCta variant="ghost" />
-              </div>
+              </Fade>
               <HeroSlideBar />
             </div>
             <div className="lg:col-span-5 lg:flex lg:justify-end">
-              <div className="w-full max-w-[400px] rounded-2xl bg-white p-2 text-on-surface shadow-[0_28px_70px_-16px_rgba(11,25,44,0.5)]">
+              <Fade delay={280} className="w-full max-w-[400px] rounded-2xl bg-white p-2 text-on-surface shadow-[0_28px_70px_-16px_rgba(11,25,44,0.5)]">
                 <div className="flex items-center justify-between px-4 py-3">
                   <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                     Get started
@@ -79,7 +83,7 @@ export default function Home() {
                     </Link>
                   ))}
                 </div>
-              </div>
+              </Fade>
             </div>
           </div>
         </div>
@@ -87,11 +91,12 @@ export default function Home() {
       </section>
 
       <section className="relative z-10 mx-auto max-w-[1320px] px-4 lg:px-10">
+        <Reveal>
         <div className="-mt-7 grid grid-cols-1 overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_-20px_rgba(15,40,78,0.25)] sm:grid-cols-3">
           {valuePoints.map((item, i) => (
             <article
               key={item.title}
-              className="flex gap-4 border-b border-slate-100 px-6 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+              className="stagger-item flex gap-4 border-b border-slate-100 px-6 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
             >
               <span className="font-ui pt-0.5 text-[12px] font-semibold tracking-[0.12em] text-slate-300">
                 0{i + 1}
@@ -103,25 +108,29 @@ export default function Home() {
             </article>
           ))}
         </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
+        <Reveal>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-          <div className="relative">
+          <div className="relative img-zoom rounded-2xl shadow-xl">
             <Image
-              src="/images/field-analysis.jpg"
-              alt="Field analysis"
+              src="/images/who-plant.jpg"
+              alt="Manufacturing plant worker in a worksuit"
               width={900}
               height={700}
-              className="aspect-[16/11] w-full rounded-xl object-cover object-[center_20%] shadow-xl"
+              className="aspect-[16/11] w-full rounded-2xl object-cover object-[center_35%]"
             />
             <p className="mt-3 text-[13px] text-outline">{companyAddress}</p>
           </div>
           <div>
             <p className="eyebrow text-secondary">Who we are</p>
-            <h2 className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]">
-              Zimbabwe’s scientific partner for industrial certainty
-            </h2>
+            <SplitLine
+              as="h2"
+              className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]"
+              text="Zimbabwe’s scientific partner for industrial certainty"
+            />
             {whoWeAre.paragraphs.map((paragraph) => (
               <p key={paragraph} className="mt-4 text-[16px] leading-relaxed text-on-surface-variant">
                 {paragraph}
@@ -133,20 +142,24 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        </Reveal>
       </section>
 
       <section id="services" className="bg-white py-16">
+        <Reveal>
         <div className="mx-auto max-w-[1320px] px-4 lg:px-10">
           <p className="eyebrow text-secondary">What we do</p>
-          <h2 className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]">
-            From the laboratory bench to the production floor
-          </h2>
+          <SplitLine
+            as="h2"
+            className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]"
+            text="From the laboratory bench to the production floor"
+          />
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service, i) => (
               <Link
                 key={service.title}
                 href="/services"
-                className="card-lift flex flex-col rounded-xl border border-surface-container bg-surface p-6"
+                className="stagger-item card-lift flex flex-col rounded-2xl border border-surface-container bg-surface p-6"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">
                   <span className="material-symbols-outlined text-[26px]">{service.icon}</span>
@@ -163,53 +176,77 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </Reveal>
       </section>
 
-      <section className="relative overflow-hidden bg-deep py-16 text-white">
-        <div className="mx-auto grid max-w-[1320px] items-center gap-10 px-4 lg:grid-cols-2 lg:px-10">
-          <div>
+      <section className="relative overflow-hidden bg-deep py-16 text-white lg:py-20">
+        <Reveal>
+        <div className="mx-auto grid max-w-[1320px] items-center gap-10 px-4 lg:grid-cols-12 lg:px-10">
+          <div className="lg:col-span-5">
             <p className="eyebrow text-ochre">Field operations</p>
-            <h2 className="font-headline mt-2 text-[32px] font-bold md:text-[40px]">
-              S360 field analysis & EMA vehicle exhaust
-            </h2>
+            <SplitLine
+              as="h2"
+              className="font-headline mt-2 text-[32px] font-bold md:text-[40px]"
+              text="S360 field analysis & EMA vehicle exhaust"
+            />
             <p className="mt-4 text-[16px] leading-relaxed text-white/70">
               Calibrated instruments used on site, including the S360 and EMA vehicle exhaust accredited analyser.
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 flex flex-col gap-3">
               {equipmentPhotos.map((photo) => (
-                <article key={photo.src} className="rounded-lg border border-white/10 bg-white/5 p-4">
+                <article
+                  key={photo.src}
+                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ochre/15 text-ochre">
+                    <span className="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+                  </span>
                   <p className="font-headline text-[15px] font-bold">{photo.caption}</p>
                 </article>
               ))}
             </div>
-            <QuoteCta variant="header" className="mt-6" />
+            <QuoteCta variant="band" className="mt-8" />
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            {[...equipmentPhotos, ...fieldPhotos].slice(0, 4).map((photo) => (
+          <div className="grid min-h-[26rem] grid-cols-2 grid-rows-2 gap-3 lg:col-span-7 lg:h-[520px] lg:min-h-0">
+            <div className="img-zoom relative row-span-2 overflow-hidden rounded-2xl">
               <Image
-                key={photo.src}
-                src={photo.src}
-                alt={photo.alt}
-                width={600}
-                height={700}
-                className="aspect-[4/5] w-full rounded-xl object-cover"
+                src={fieldPhotos[0].src}
+                alt={fieldPhotos[0].alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 90vw"
               />
+              <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 py-4 text-[13px] font-medium">
+                {fieldPhotos[0].caption}
+              </p>
+            </div>
+            {fieldPhotos.slice(1).map((photo) => (
+              <div key={photo.src} className="img-zoom relative overflow-hidden rounded-2xl">
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="30vw" />
+                <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 py-3 text-[12px] font-medium">
+                  {photo.caption}
+                </p>
+              </div>
             ))}
           </div>
         </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
+        <Reveal>
         <p className="eyebrow text-center text-secondary">Industries</p>
-        <h2 className="font-headline mt-2 text-center text-[32px] font-bold text-primary md:text-[40px]">
-          Industries we serve
-        </h2>
+        <SplitLine
+          as="h2"
+          className="font-headline mt-2 text-center text-[32px] font-bold text-primary md:text-[40px]"
+          text="Industries we serve"
+        />
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {industries.map((item) => (
             <Link
               key={item.title}
               href="/industries"
-              className="card-lift rounded-xl border border-surface-container bg-white p-5"
+              className="stagger-item card-lift rounded-2xl border border-surface-container bg-white p-5"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-container text-secondary">
                 <span className="material-symbols-outlined">{item.icon}</span>
@@ -219,17 +256,21 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        </Reveal>
       </section>
 
       <section className="bg-white py-16">
+        <Reveal>
         <div className="mx-auto max-w-[1320px] px-4 lg:px-10">
           <p className="eyebrow text-secondary">Process</p>
-          <h2 className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]">
-            How it works
-          </h2>
+          <SplitLine
+            as="h2"
+            className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]"
+            text="How it works"
+          />
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
-              <article key={step.number} className="rounded-xl border border-surface-container p-6">
+              <article key={step.number} className="stagger-item rounded-2xl border border-surface-container p-6">
                 <span className="inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-primary text-[13px] font-bold text-white">
                   {step.number.replace(/^0/, "")}
                 </span>
@@ -239,16 +280,20 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
+        <Reveal>
         <p className="eyebrow text-secondary">Why Comkud</p>
-        <h2 className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]">
-          Why choose Comkud
-        </h2>
+        <SplitLine
+          as="h2"
+          className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]"
+          text="Why choose Comkud"
+        />
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
-            <article key={item.title} className="card-lift rounded-xl border border-surface-container bg-white p-6">
+            <article key={item.title} className="stagger-item card-lift rounded-2xl border border-surface-container bg-white p-6">
               <span className="material-symbols-outlined text-secondary" style={iconStyle}>
                 {item.icon}
               </span>
@@ -257,6 +302,7 @@ export default function Home() {
             </article>
           ))}
         </div>
+        </Reveal>
       </section>
 
       <CtaBand title="Need a reliable analytical partner for your operation?" />

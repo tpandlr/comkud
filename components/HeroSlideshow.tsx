@@ -24,7 +24,7 @@ function useSlideIndex() {
 
 function Slides({ index }: { index: number }) {
   return (
-    <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 z-0 overflow-hidden">
       {heroSlides.map((slide, i) => (
         <Image
           key={slide.src}
@@ -32,13 +32,13 @@ function Slides({ index }: { index: number }) {
           alt={slide.alt}
           fill
           priority={i === 0}
-          className={`object-cover transition-opacity duration-1000 ${
-            i === index ? "opacity-100" : "opacity-0"
+          className={`hero-slide object-cover transition-opacity duration-1000 ${
+            i === index ? "is-active opacity-100" : "opacity-0"
           }`}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-ink via-deep/90 to-deep/70" />
-      <div className="absolute inset-0 bg-gradient-to-t from-deep via-transparent to-deep/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-ink/70 via-deep/35 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-deep/55 via-transparent to-deep/20" />
     </div>
   );
 }
@@ -59,7 +59,7 @@ export function HeroSlideBar() {
   const { index, setIndex } = ctx;
 
   return (
-    <div className="mt-10 flex items-center gap-3">
+    <div key={index} className="mt-10 flex items-center gap-3" style={{ animation: "fade-in 0.45s ease" }}>
       {heroSlides.map((slide, i) => (
         <button
           key={slide.src}
