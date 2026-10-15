@@ -217,6 +217,29 @@ export const commitments = [
   },
 ] as const;
 
+export const heroSlides = [
+  {
+    src: "/images/stock-lab.jpg",
+    alt: "Analytical laboratory",
+    caption: "Laboratory analysis",
+  },
+  {
+    src: "/images/stock-plant.jpg",
+    alt: "Industrial plant",
+    caption: "Chemical production support",
+  },
+  {
+    src: "/images/field-analysis.jpg",
+    alt: "Field analysis",
+    caption: "On-site field work",
+  },
+  {
+    src: "/images/s360.jpg",
+    alt: "S360 analyser",
+    caption: "S360 field analysis",
+  },
+] as const;
+
 export const quotationEmail = "info@comkud.co.zw";
 export const quotationHref = "/contact#quotation";
 export const quotationLabel = "Request a Quote";

@@ -1,27 +1,25 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #0b3a82;
+  --color-primary: #0f284e;
+  --color-primary-ink: #001332;
   --color-on-primary: #ffffff;
-  --color-on-primary-container: #2e6bff;
-  --color-on-surface: #0a2540;
-  --color-on-surface-variant: #5a6a80;
-  --color-surface: #ffffff;
-  --color-background: #ffffff;
-  --color-surface-container-low: #f4f7fb;
+  --color-secondary: #295ea8;
+  --color-action: #0d47a1;
+  --color-azure: #0066ff;
+  --color-ochre: #d7a53f;
+  --color-on-surface: #111c2c;
+  --color-on-surface-variant: #44474e;
+  --color-outline: #74777f;
+  --color-surface: #f6f8fa;
+  --color-background: #f6f8fa;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e7eeff;
   --color-surface-container-lowest: #ffffff;
-  --color-footer: #071f4a;
-  --font-headline: var(--font-geist-sans);
-  --font-body: var(--font-geist-sans);
-}
-
-.glass-nav {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(16px);
-}
-
-.water-shadow {
-  box-shadow: 0 8px 24px rgba(10, 37, 64, 0.06);
+  --color-deep: #0b192c;
+  --color-footer: #0b192c;
+  --font-headline: var(--font-plus-jakarta);
+  --font-body: var(--font-inter);
 }
 
 .material-symbols-outlined {
@@ -32,11 +30,93 @@
 body {
   background: var(--color-surface);
   color: var(--color-on-surface);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 .font-headline {
-  letter-spacing: -0.025em;
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.font-ui {
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 2.75rem;
+  padding: 0 1.35rem;
+  border-radius: 9999px;
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  height: 2.375rem;
+  padding: 0 1.1rem;
+  font-size: 0.8125rem;
+}
+
+.btn-primary {
+  background: #0d47a1;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background: #0b3c8a;
+}
+
+.btn-light {
+  background: #fff;
+  color: #0f284e;
+  border: 1px solid transparent;
+}
+
+.btn-ghost {
+  background: rgb(255 255 255 / 0.08);
+  color: #fff;
+  border: 1px solid rgb(255 255 255 / 0.28);
+}
+
+.btn-ghost:hover {
+  background: rgb(255 255 255 / 0.16);
+}
+
+.btn-gold {
+  background: #d7a53f;
+  color: #0f284e;
+  border: 1px solid transparent;
+}
+
+.eyebrow {
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-lift {
+  box-shadow: 0 2px 6px -1px rgb(15 40 78 / 0.04), 0 1px 3px -1px rgb(15 40 78 / 0.03);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card-lift:hover {
+  box-shadow: 0 8px 20px -2px rgb(15 40 78 / 0.08);
+  transform: translateY(-2px);
 }
 
 .mobile-drawer-backdrop {
@@ -44,7 +124,7 @@ body {
   inset: 0;
   z-index: 80;
   border: 0;
-  background: rgb(10 37 64 / 0.45);
+  background: rgb(11 25 44 / 0.5);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.28s ease;
@@ -65,7 +145,7 @@ body {
   width: min(20rem, 86vw);
   flex-direction: column;
   background: #fff;
-  box-shadow: -12px 0 40px rgb(10 37 64 / 0.18);
+  box-shadow: -12px 0 40px rgb(11 25 44 / 0.2);
   transform: translateX(100%);
   pointer-events: none;
   transition: transform 0.28s ease;

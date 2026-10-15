@@ -2,16 +2,17 @@ import Link from "next/link";
 import { quotationHref, quotationLabel } from "@/lib/content";
 
 type QuoteCtaProps = Readonly<{
-  variant?: "header" | "hero" | "footer" | "band";
+  variant?: "header" | "hero" | "ghost" | "footer" | "band";
   onClick?: () => void;
   className?: string;
 }>;
 
 const styles = {
-  header: "rounded-md bg-primary px-5 py-2 text-[13px] font-medium text-white",
-  hero: "rounded-md bg-primary px-6 py-2.5 text-[14px] font-medium text-white",
-  footer: "mt-5 inline-flex rounded-md bg-white px-5 py-2 text-[13px] font-medium text-primary",
-  band: "mt-8 inline-flex rounded-md bg-white px-6 py-2.5 text-[14px] font-medium text-primary",
+  header: "btn btn-sm btn-primary",
+  hero: "btn btn-light",
+  ghost: "btn btn-ghost",
+  footer: "btn btn-sm btn-gold mt-5",
+  band: "btn btn-gold mt-8",
 } as const;
 
 export function QuoteCta({ variant = "hero", onClick, className = "" }: QuoteCtaProps) {

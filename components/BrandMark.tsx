@@ -13,7 +13,7 @@ export function BrandMark({ onClick }: BrandMarkProps) {
         alt="COMKUD Analytical Solutions"
         width={835}
         height={278}
-        className="h-11 w-auto md:h-12"
+        className="h-10 w-auto md:h-12"
         priority
       />
     </Link>

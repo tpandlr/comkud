@@ -3,8 +3,8 @@ import { equipmentPhotos, fieldPhotos } from "@/lib/content";
 
 export function SitePhotos({ heading = "On site" }: { heading?: string }) {
   return (
-    <section className="border-t border-slate-100 bg-surface-container-low">
-      <div className="mx-auto max-w-[1230px] px-7 py-20">
+    <section className="bg-surface">
+      <div className="mx-auto max-w-[1320px] px-4 py-14 lg:px-10">
         <h2 className="font-headline text-[36px] font-semibold text-primary md:text-[40px]">
           {heading}
         </h2>

@@ -93,12 +93,12 @@ export function Header() {
     );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white">
-      <div className="mx-auto flex w-full max-w-[1230px] items-center justify-between gap-3 px-5 py-3 md:px-7 md:py-4">
+    <header className="sticky top-0 z-50 w-full border-b border-surface-container/60 bg-white shadow-sm">
+      <div className="mx-auto flex h-16 w-full max-w-[1320px] items-center justify-between gap-3 px-4 md:h-20 lg:px-10">
         <BrandMark onClick={() => setOpen(false)} />
 
-        <div className="hidden items-center gap-7 lg:flex">
-          <nav className="flex items-center gap-7">
+        <div className="hidden items-center gap-8 lg:flex">
+          <nav className="font-ui flex items-center gap-8">
             {navLinks.map((link) => {
               const active = isActive(pathname, link.href);
               return (
@@ -108,8 +108,8 @@ export function Header() {
                   aria-current={active ? "page" : undefined}
                   className={
                     active
-                      ? "text-[14px] font-medium text-primary"
-                      : "text-[14px] font-normal text-slate-500 hover:text-primary"
+                      ? "text-[13px] font-semibold tracking-tight text-primary"
+                      : "text-[13px] font-medium tracking-tight text-slate-500 hover:text-primary"
                   }
                 >
                   {link.label}

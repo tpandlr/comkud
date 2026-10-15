@@ -101,7 +101,7 @@ export function QuoteForm({ sent = false }: QuoteFormProps) {
       </div>
       <button
         type="submit"
-        className="mt-6 rounded-md bg-primary px-6 py-2.5 text-[14px] font-medium text-white"
+        className="btn btn-primary mt-6"
       >
         Send Enquiry
       </button>

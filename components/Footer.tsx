@@ -5,8 +5,8 @@ import { companyAddress, navLinks, quotationEmail, services, tagline } from "@/l
 
 export function Footer() {
   return (
-    <footer className="bg-footer text-white">
-      <div className="mx-auto grid max-w-[1230px] grid-cols-1 gap-12 px-7 py-16 md:grid-cols-3">
+    <footer className="bg-deep text-white">
+      <div className="mx-auto grid max-w-[1320px] grid-cols-1 gap-12 px-4 py-16 md:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div>
           <Image
             src="/images/logo.png"
@@ -19,7 +19,7 @@ export function Footer() {
           <p className="mt-4 text-[14px] text-white/70">{companyAddress}</p>
         </div>
         <div>
-          <p className="text-[13px] font-medium text-white/80">Services</p>
+          <p className="eyebrow text-ochre">Services</p>
           <ul className="mt-4 space-y-3 text-[14px] text-white/70">
             {services.map((service) => (
               <li key={service.title}>
@@ -31,7 +31,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="text-[13px] font-medium text-white/80">Site</p>
+          <p className="eyebrow text-ochre">Site</p>
           <ul className="mt-4 space-y-3 text-[14px] text-white/70">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -41,14 +41,17 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <a href={`mailto:${quotationEmail}`} className="mt-6 block text-[14px] hover:text-white">
+        </div>
+        <div>
+          <p className="eyebrow text-ochre">Contact</p>
+          <a href={`mailto:${quotationEmail}`} className="mt-4 block text-[14px] text-white/80 hover:text-white">
             {quotationEmail}
           </a>
           <QuoteCta variant="footer" />
         </div>
       </div>
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-[1230px] px-7 py-5 text-[12px] text-white/50">
+        <p className="mx-auto max-w-[1320px] px-4 py-5 text-[12px] text-white/50 lg:px-10">
           © 2026 Comkud Analytical Solutions. All rights reserved.
         </p>
       </div>

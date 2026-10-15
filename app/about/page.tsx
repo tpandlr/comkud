@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
-import { QuoteCta } from "@/components/QuoteCta";
+import { PageHero } from "@/components/PageHero";
 import { commitments, companyAddress, missionVision, quotationEmail, whoWeAre } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -11,103 +9,59 @@ export const metadata: Metadata = {
     "Learn about Comkud's vision, mission and values. Analytical and chemical expertise based in Chinhoyi.",
 };
 
-const iconStyle = { fontVariationSettings: "'FILL' 1" } as const;
-
 export default function AboutPage() {
   return (
     <main>
-      <section className="mx-auto max-w-[1230px] px-7 py-16 md:py-20">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h1 className="font-headline text-[44px] font-semibold leading-[1.15] text-primary md:text-[52px]">
-              About Us
-            </h1>
-            <p className="mt-6 text-[16px] text-slate-500">
-              Analytical and chemical expertise based in Chinhoyi.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <QuoteCta />
-              <Link
-                href="/services"
-                className="rounded-md border border-slate-300 bg-white px-6 py-2.5 text-[14px] font-medium text-primary"
-              >
-                Explore Our Services
-              </Link>
-            </div>
+      <PageHero title="About Us" body="Analytical and chemical expertise based in Chinhoyi." />
+
+      <section className="mx-auto max-w-[1320px] px-4 py-14 lg:px-10">
+        <p className="eyebrow text-secondary">{whoWeAre.title}</p>
+        {whoWeAre.paragraphs.map((paragraph) => (
+          <p key={paragraph} className="mt-4 max-w-3xl text-[16px] leading-relaxed text-on-surface-variant">
+            {paragraph}
+          </p>
+        ))}
+        <dl className="mt-10 grid gap-px overflow-hidden rounded-xl border border-surface-container bg-surface-container text-[14px] sm:grid-cols-2">
+          <div className="bg-white p-4">
+            <dt className="eyebrow text-outline">Company</dt>
+            <dd className="mt-1.5 font-semibold text-primary">Comkud Analytical Solutions</dd>
           </div>
-          <Image
-            src="/images/field-analysis.jpg"
-            alt="Field analysis with a portable analyser"
-            width={900}
-            height={1200}
-            className="aspect-[16/11] w-full rounded-xl object-cover object-[center_20%] shadow-[0_12px_40px_rgba(11,58,130,0.12)]"
-            priority
-          />
-        </div>
-      </section>
-
-      <section className="border-t border-slate-100 bg-surface-container-low">
-        <div className="mx-auto max-w-[1230px] px-7 py-20">
-          <h2 className="font-headline text-[36px] font-semibold leading-[1.2] text-primary md:text-[40px]">
-            {whoWeAre.title}
-          </h2>
-          <div className="mt-6 max-w-3xl">
-            {whoWeAre.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="mt-4 text-[16px] leading-relaxed text-slate-500">
-                {paragraph}
-              </p>
-            ))}
+          <div className="bg-white p-4">
+            <dt className="eyebrow text-outline">Address</dt>
+            <dd className="mt-1.5 font-semibold text-primary">{companyAddress}</dd>
           </div>
-          <dl className="mt-10 grid gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 text-[14px] sm:grid-cols-2">
-            <div className="bg-white p-4">
-              <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Company</dt>
-              <dd className="mt-1.5 text-primary">Comkud Analytical Solutions</dd>
-            </div>
-            <div className="bg-white p-4">
-              <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Address</dt>
-              <dd className="mt-1.5 text-primary">{companyAddress}</dd>
-            </div>
-            <div className="bg-white p-4 sm:col-span-2">
-              <dt className="text-[12px] font-medium uppercase tracking-wide text-slate-500">Contact</dt>
-              <dd className="mt-1.5 text-primary">{quotationEmail}</dd>
-            </div>
-          </dl>
-        </div>
+          <div className="bg-white p-4 sm:col-span-2">
+            <dt className="eyebrow text-outline">Contact</dt>
+            <dd className="mt-1.5 font-semibold text-primary">{quotationEmail}</dd>
+          </div>
+        </dl>
       </section>
 
-      <section className="mx-auto max-w-[1230px] px-7 py-20">
-        <h2 className="font-headline text-[36px] font-semibold text-primary md:text-[40px]">
-          Mission & vision
-        </h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {missionVision.map((item) => (
-            <article key={item.label} className="rounded-xl border border-slate-200 p-7">
-              <span className="material-symbols-outlined text-[22px] text-primary" style={iconStyle}>
-                {item.icon}
-              </span>
-              <h3 className="mt-4 font-headline text-[22px] font-semibold text-primary">{item.label}</h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-slate-500">{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-slate-100 bg-surface-container-low">
-        <div className="mx-auto max-w-[1230px] px-7 py-20">
-          <h2 className="font-headline text-[36px] font-semibold text-primary md:text-[40px]">
-            Our values
-          </h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {commitments.map((item) => (
-              <article key={item.title} className="rounded-xl border border-slate-200 bg-white p-7">
-                <span className="material-symbols-outlined text-[22px] text-primary" style={iconStyle}>
-                  {item.icon}
-                </span>
-                <h3 className="mt-4 font-headline text-[22px] font-semibold text-primary">{item.title}</h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-slate-500">{item.text}</p>
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-[1320px] px-4 lg:px-10">
+          <p className="eyebrow text-secondary">Purpose</p>
+          <h2 className="font-headline mt-2 text-[32px] font-bold text-primary">Mission & vision</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {missionVision.map((item) => (
+              <article key={item.label} className="card-lift rounded-xl border border-surface-container p-7">
+                <h3 className="font-headline text-[22px] font-bold text-primary">{item.label}</h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-on-surface-variant">{item.text}</p>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1320px] px-4 py-14 lg:px-10">
+        <p className="eyebrow text-secondary">Culture</p>
+        <h2 className="font-headline mt-2 text-[32px] font-bold text-primary">Our values</h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {commitments.map((item) => (
+            <article key={item.title} className="card-lift rounded-xl border border-surface-container bg-white p-7">
+              <h3 className="font-headline text-[22px] font-bold text-primary">{item.title}</h3>
+              <p className="mt-2 text-[14px] leading-relaxed text-on-surface-variant">{item.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
