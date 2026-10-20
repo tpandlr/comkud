@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CtaBand } from "@/components/CtaBand";
 import { HeroSlideBar, HeroStage } from "@/components/HeroSlideshow";
+import { PhotoRotate } from "@/components/PhotoRotate";
 import { QuoteCta } from "@/components/QuoteCta";
 import { Fade, SplitLine } from "@/components/MotionText";
 import { Reveal } from "@/components/Reveal";
@@ -29,7 +30,7 @@ export default function Home() {
             <div className="lg:col-span-7">
               <Fade className="inline-flex">
                 <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-white/80">
-                  Analytical & chemical solutions · Zimbabwe
+                  Environmental consultancy · Zimbabwe
                 </p>
               </Fade>
               <h1 className="font-headline mt-6 max-w-xl text-[34px] leading-[1.08] text-white sm:text-[44px] lg:text-[52px]">
@@ -38,8 +39,8 @@ export default function Home() {
                 <SplitLine as="span" className="block" text="Real Confidence." delay={360} />
               </h1>
               <Fade delay={520} className="mt-5 max-w-lg text-[15px] leading-[1.65] text-white/70 sm:text-[16px]">
-                Laboratory testing, chemical solutions, equipment support and technical consulting
-                for Zimbabwe’s industries.
+                Emissions monitoring and environmental consultancy, with laboratory analysis,
+                training and technical services for Zimbabwe’s industries.
               </Fade>
               <Fade delay={640} className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 <Link href="/services" className="btn btn-light">
@@ -58,10 +59,10 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-1 pb-1">
                   {[
-                    { href: "/contact#quotation", icon: "biotech", title: "Laboratory testing", text: "Request a quote" },
-                    { href: "/services", icon: "science", title: "Chemical supply", text: "Production and products" },
-                    { href: "/services", icon: "precision_manufacturing", title: "Equipment", text: "Sourcing and setup" },
-                    { href: "/contact", icon: "support_agent", title: "Consulting", text: "Talk to the team" },
+                    { href: "/contact#quotation", icon: "air", title: "Air emissions testing", text: "Stacks and vehicle exhaust" },
+                    { href: "/services", icon: "graphic_eq", title: "Environmental monitoring", text: "Air, noise and dust" },
+                    { href: "/services", icon: "eco", title: "Environmental consultancy", text: "Audits, EIA and compliance" },
+                    { href: "/services", icon: "school", title: "Training", text: "On-site and in-house" },
                   ].map((item) => (
                     <Link
                       key={item.title}
@@ -114,31 +115,38 @@ export default function Home() {
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
         <Reveal>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-          <div className="relative img-zoom rounded-2xl shadow-xl">
+          <div className="relative img-zoom overflow-hidden rounded-2xl">
             <Image
-              src="/images/who-plant.jpg"
-              alt="Manufacturing plant worker in a worksuit"
+              src="/images/env-workers.jpg"
+              alt="Field team in worksuits"
               width={900}
               height={700}
-              className="aspect-[16/11] w-full rounded-2xl object-cover object-[center_35%]"
+              className="aspect-[16/11] w-full rounded-2xl object-cover object-center"
             />
-            <p className="mt-3 text-[13px] text-outline">{companyAddress}</p>
+            <p className="img-caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 py-4 text-[13px] text-white">
+              {companyAddress}
+            </p>
           </div>
           <div>
             <p className="eyebrow text-secondary">Who we are</p>
             <SplitLine
               as="h2"
               className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]"
-              text="Zimbabwe’s scientific partner for industrial certainty"
+              text="Zimbabwe’s environmental consultancy for industrial certainty"
             />
             {whoWeAre.paragraphs.map((paragraph) => (
               <p key={paragraph} className="mt-4 text-[16px] leading-relaxed text-on-surface-variant">
                 {paragraph}
               </p>
             ))}
-            <Link href="/about" className="mt-6 inline-flex items-center gap-2 font-semibold text-secondary">
+            <Link
+              href="/about"
+              className="group mt-6 inline-flex items-center gap-2 font-semibold text-secondary transition-all hover:gap-3"
+            >
               About Comkud
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <span className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-0.5">
+                arrow_forward
+              </span>
             </Link>
           </div>
         </div>
@@ -152,9 +160,9 @@ export default function Home() {
           <SplitLine
             as="h2"
             className="font-headline mt-2 text-[32px] font-bold text-primary md:text-[40px]"
-            text="From the laboratory bench to the production floor"
+            text="Emissions monitoring, environmental consultancy and the work around it"
           />
-          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
               <Link
                 key={service.title}
@@ -164,13 +172,16 @@ export default function Home() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">
                   <span className="material-symbols-outlined text-[26px]">{service.icon}</span>
                 </span>
-                <p className="eyebrow mt-5 text-secondary">Division 0{i + 1}</p>
+                <p className="eyebrow mt-5 text-secondary">
+                  {service.emphasis === "primary" ? "Primary" : "Also offered"} 0{i + 1}
+                </p>
                 <h3 className="font-headline mt-1 text-[20px] font-bold text-primary">{service.title}</h3>
                 <p className="mt-3 flex-1 text-[14px] leading-relaxed text-on-surface-variant">
                   {service.summary}
                 </p>
-                <span className="mt-5 border-t border-surface-container pt-4 text-[14px] font-semibold text-secondary">
+                <span className="hover-kicker mt-5 border-t border-surface-container pt-4 text-[14px] font-semibold text-secondary">
                   Learn more
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </span>
               </Link>
             ))}
@@ -182,48 +193,24 @@ export default function Home() {
       <section className="relative overflow-hidden bg-deep py-16 text-white lg:py-20">
         <Reveal>
         <div className="mx-auto grid max-w-[1320px] items-center gap-10 px-4 lg:grid-cols-12 lg:px-10">
-          <div className="lg:col-span-5">
-            <p className="eyebrow text-ochre">Field operations</p>
+          <div className="lg:col-span-6">
+            <p className="eyebrow text-ochre">Environmental analysis</p>
             <SplitLine
               as="h2"
               className="font-headline mt-2 text-[32px] font-bold md:text-[40px]"
-              text="S360 field analysis & EMA vehicle exhaust"
+              text="Field analysis, stack sampling and vehicle exhaust"
             />
             <p className="mt-4 text-[16px] leading-relaxed text-white/70">
               Calibrated instruments used on site, including the S360 and EMA vehicle exhaust accredited analyser.
             </p>
-            <div className="mt-6 flex flex-col gap-3">
-              {equipmentPhotos.map((photo) => (
-                <article
-                  key={photo.src}
-                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5"
-                >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ochre/15 text-ochre">
-                    <span className="material-symbols-outlined text-[20px]">precision_manufacturing</span>
-                  </span>
-                  <p className="font-headline text-[15px] font-bold">{photo.caption}</p>
-                </article>
-              ))}
-            </div>
             <QuoteCta variant="band" className="mt-8" />
           </div>
-          <div className="grid min-h-[26rem] grid-cols-2 grid-rows-2 gap-3 lg:col-span-7 lg:h-[520px] lg:min-h-0">
-            <div className="img-zoom relative row-span-2 overflow-hidden rounded-2xl">
-              <Image
-                src={fieldPhotos[0].src}
-                alt={fieldPhotos[0].alt}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 40vw, 90vw"
-              />
-              <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 py-4 text-[13px] font-medium">
-                {fieldPhotos[0].caption}
-              </p>
-            </div>
-            {fieldPhotos.slice(1).map((photo) => (
-              <div key={photo.src} className="img-zoom relative overflow-hidden rounded-2xl">
-                <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="30vw" />
-                <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 py-3 text-[12px] font-medium">
+          <PhotoRotate slides={equipmentPhotos} className="w-full lg:col-span-6" />
+          <div className="grid grid-cols-2 gap-3 lg:col-span-12 lg:grid-cols-3">
+            {fieldPhotos.map((photo) => (
+              <div key={photo.src} className="img-zoom relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="33vw" />
+                <p className="img-caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 py-3 text-[12px] font-medium">
                   {photo.caption}
                 </p>
               </div>

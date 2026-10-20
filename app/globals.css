@@ -171,6 +171,29 @@ body {
   transform: translateY(-4px);
 }
 
+.card-lift h2,
+.card-lift h3 {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.card-lift:hover h2,
+.card-lift:hover h3 {
+  color: #295ea8;
+  transform: translateX(2px);
+}
+
+.card-lift .hover-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.card-lift:hover .hover-kicker {
+  gap: 0.5rem;
+  color: #0d47a1;
+}
+
 .img-zoom {
   overflow: hidden;
 }
@@ -181,6 +204,26 @@ body {
 
 .img-zoom:hover img {
   transform: scale(1.06);
+}
+
+.img-caption {
+  transform: translateY(10px);
+  opacity: 0.8;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+}
+
+.img-zoom:hover .img-caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.img-zoom figcaption {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+}
+
+.img-zoom:hover figcaption {
+  transform: translateX(4px);
+  color: #295ea8;
 }
 
 .footer-link {

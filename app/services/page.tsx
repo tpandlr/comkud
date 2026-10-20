@@ -8,7 +8,7 @@ import { services } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Services | COMKUD Analytical Solutions",
   description:
-    "Explore Comkud's laboratory testing, chemical production, equipment installation and consulting services.",
+    "Air emissions monitoring, environmental monitoring, consultancy, laboratory analysis, training and technical reporting.",
 };
 
 export default function ServicesPage() {
@@ -16,7 +16,7 @@ export default function ServicesPage() {
     <main>
       <PageHero
         title="Services"
-        body="From the laboratory bench to the production floor, Comkud offers an integrated set of analytical and technical services."
+        body="Air emissions testing and environmental monitoring first, with consultancy, laboratory analysis, training and technical reporting around them."
         secondaryHref="/industries"
         secondaryLabel="Industries"
       />
@@ -32,7 +32,9 @@ export default function ServicesPage() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
                   <span className="material-symbols-outlined text-[26px]">{service.icon}</span>
                 </span>
-                <p className="eyebrow mt-5 text-secondary">Division 0{i + 1}</p>
+                <p className="eyebrow mt-5 text-secondary">
+                  {service.emphasis === "primary" ? "Primary" : "Also offered"} 0{i + 1}
+                </p>
                 <h2 className="font-headline mt-2 text-[22px] font-bold text-primary">{service.title}</h2>
                 <p className="mt-2 text-[14px] leading-relaxed text-on-surface-variant">{service.summary}</p>
                 <ul className="mt-4 space-y-2 text-[14px] text-on-surface-variant">

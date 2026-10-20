@@ -8,48 +8,90 @@ export const navLinks = [
 ] as const;
 
 export const companyAddress = "7557 Millennium Park, Zimbabwe";
-export const tagline = "Precision analysis. Reliable results.";
+export const tagline = "Environmental consultancy. Reliable results.";
 
 export const services = [
   {
+    icon: "air",
+    title: "Air Emissions Monitoring and Testing",
+    summary:
+      "Industrial stack and flue gas emissions testing, plus vehicle exhaust emissions testing.",
+    points: [
+      "Stack and flue gas testing for generators, boilers, furnaces and chimneys",
+      "Vehicle exhaust emissions testing",
+    ],
+    emphasis: "primary",
+  },
+  {
+    icon: "graphic_eq",
+    title: "Environmental Monitoring",
+    summary: "Ambient and site monitoring for the conditions that affect people, plant and surroundings.",
+    points: [
+      "Ambient air quality monitoring",
+      "Environmental noise monitoring",
+      "Dust and particulate matter monitoring",
+      "Other applicable environmental assessments",
+    ],
+    emphasis: "primary",
+  },
+  {
+    icon: "eco",
+    title: "Environmental Consultancy and Compliance",
+    summary: "Advice, audits and documentation to help operations meet environmental requirements.",
+    points: [
+      "Environmental audits",
+      "Environmental compliance assessments",
+      "Regulatory advisory",
+      "Environmental Impact Assessments (EIA)",
+      "Technical reporting",
+    ],
+    emphasis: "primary",
+  },
+  {
+    icon: "school",
+    title: "Environmental and Technical Training",
+    summary: "Training programmes that build environmental awareness and practical skills.",
+    points: [
+      "Environmental awareness",
+      "Environmental compliance",
+      "Emissions management",
+      "Pollution prevention",
+      "Other relevant technical training programmes",
+    ],
+    emphasis: "support",
+  },
+  {
     icon: "biotech",
-    title: "Laboratory Testing",
-    summary: "Analysis of samples to verify quality, composition and compliance.",
+    title: "Laboratory Testing and Sample Analysis",
+    summary:
+      "Laboratory analysis of samples using the equipment we have in house. A full test menu will be listed only for methods we are equipped to perform.",
     points: [
-      "Chemical analysis of raw materials and finished products",
-      "Quality control testing",
-      "Clear, well-documented test reports",
+      "Sample analysis using available laboratory equipment",
+      "Atomic Absorption Spectrophotometry (AAS), where it fits the sample and method",
     ],
+    emphasis: "support",
   },
   {
-    icon: "science",
-    title: "Chemical Production & Supply",
-    summary: "Chemical products matched to your application, with consistent quality and dependable supply.",
+    icon: "home_work",
+    title: "In-House and On-Site Training",
+    summary: "Customised training at the client’s premises, shaped around their operation and staff.",
     points: [
-      "Product guidance and safe-handling information",
-      "Custom requirements on request",
+      "Training delivered at the workplace",
+      "Programmes tailored to operations, staff and training requirements",
     ],
+    emphasis: "support",
   },
   {
-    icon: "precision_manufacturing",
-    title: "Equipment & Installation",
-    summary: "Support for establishing and maintaining a working analytical environment.",
+    icon: "description",
+    title: "Technical Advisory and Reporting",
+    summary: "Clear interpretation of results and practical recommendations for performance and compliance.",
     points: [
-      "Advice on and sourcing of laboratory equipment",
-      "Installation and commissioning",
-      "Staff familiarisation on equipment use",
+      "Interpretation of results",
+      "Engineering recommendations",
+      "Environmental documentation",
+      "Support for operational performance and compliance",
     ],
-  },
-  {
-    icon: "support_agent",
-    title: "Technical Consulting",
-    summary: "Experienced guidance to improve your testing, quality and compliance.",
-    points: [
-      "Laboratory set-up and workflow planning",
-      "Test method selection and quality control practices",
-      "Process and quality improvement reviews",
-      "Training for technical teams",
-    ],
+    emphasis: "support",
   },
 ] as const;
 
@@ -145,7 +187,7 @@ export const advantages = [
   {
     icon: "account_tree",
     title: "Integrated offering",
-    text: "Testing, chemicals, equipment and consulting from one partner.",
+    text: "Emissions monitoring, consultancy, laboratory analysis and training from one partner.",
   },
   {
     icon: "handyman",
@@ -172,7 +214,7 @@ export const advantages = [
 export const whoWeAre = {
   title: "Who we are",
   paragraphs: [
-    "Comkud Analytical Solutions is a Zimbabwean analytical and chemical solutions company based at 7557 Millennium Park. We exist to give businesses dependable scientific data and practical technical support, so they can operate with confidence, meet quality requirements and improve their processes.",
+    "Comkud Analytical Solutions is a Zimbabwean environmental consultancy based at 7557 Millennium Park. Our primary work is environmental consultancy and emissions monitoring, supported by laboratory analysis, training and technical services, so businesses can operate with confidence and meet their environmental requirements.",
   ],
 } as const;
 
@@ -219,24 +261,24 @@ export const commitments = [
 
 export const heroSlides = [
   {
-    src: "/images/hero-factory.jpg",
-    alt: "Industrial machinery inside a factory",
-    caption: "Factory operations",
-  },
-  {
-    src: "/images/hero-plant.jpg",
-    alt: "Manufacturing plant under a blue sky",
-    caption: "Manufacturing plants",
-  },
-  {
     src: "/images/hero-environment.jpg",
     alt: "Industrial chimney over a forested landscape",
-    caption: "Environment & emissions",
+    caption: "Environmental analysis",
   },
   {
-    src: "/images/hero-manufacturing.jpg",
-    alt: "Aerial view of a manufacturing facility",
-    caption: "Industrial production",
+    src: "/images/env-river.jpg",
+    alt: "Industrial stacks beside a river and forest",
+    caption: "Air and water quality",
+  },
+  {
+    src: "/images/env-water.jpg",
+    alt: "Natural water landscape",
+    caption: "Water and ecosystems",
+  },
+  {
+    src: "/images/env-workers.jpg",
+    alt: "Field team in worksuits and hard hats",
+    caption: "On-site environmental work",
   },
 ] as const;
 
@@ -261,22 +303,47 @@ export const equipmentPhotos = [
     alt: "Nanhua NHA-6000 automotive emission analyser",
     caption: "EMA vehicle exhaust accredited",
   },
+  {
+    src: "/images/vehicle-workshop.jpg",
+    alt: "Technicians working on a vehicle engine",
+    caption: "Vehicle exhaust testing",
+  },
+  {
+    src: "/images/stacks.png",
+    alt: "Industrial stacks and flue gas at a plant",
+    caption: "Stack and flue gas",
+  },
 ] as const;
 
 export const fieldPhotos = [
   {
-    src: "/images/field-engineer.jpg",
-    alt: "Factory operator in a blue worksuit and hard hat",
-    caption: "Plant operations",
+    src: "/images/stack-sampling.jpg",
+    alt: "Technician sampling stack emissions on site",
+    caption: "Stack sampling",
   },
   {
-    src: "/images/field-ppe.jpg",
-    alt: "Production-line worker in hard hat and workwear",
-    caption: "Manufacturing floor",
+    src: "/images/field-analysis.jpg",
+    alt: "Field analysis with a portable analyser",
+    caption: "Field analysis",
   },
   {
-    src: "/images/field-sampling.jpg",
-    alt: "Plant workers in worksuits on the factory line",
-    caption: "Production support",
+    src: "/images/env-workers.jpg",
+    alt: "Field team in worksuits and hard hats",
+    caption: "On-site work",
+  },
+  {
+    src: "/images/env-team.jpg",
+    alt: "Technical team reviewing plans in safety gear",
+    caption: "Technical advisory",
+  },
+  {
+    src: "/images/env-river.jpg",
+    alt: "Industrial stacks beside river and forest",
+    caption: "Emissions and surroundings",
+  },
+  {
+    src: "/images/env-water.jpg",
+    alt: "Natural water landscape",
+    caption: "Water and surroundings",
   },
 ] as const;

@@ -1,7 +1,7 @@
 import { QuoteCta } from "@/components/QuoteCta";
 import { SplitLine } from "@/components/MotionText";
 import { Reveal } from "@/components/Reveal";
-import { companyAddress, quotationEmail } from "@/lib/content";
+import { quotationEmail } from "@/lib/content";
 
 type CtaBandProps = Readonly<{
   title: string;
@@ -22,10 +22,9 @@ export function CtaBand({ title, button = true }: CtaBandProps) {
               className="font-headline mt-3 text-[32px] leading-tight md:text-[42px]"
               text={title}
             />
-            <p className="mt-4 text-[15px] leading-relaxed text-white/70">{companyAddress}</p>
             <a
               href={`mailto:${quotationEmail}`}
-              className="footer-link mt-2 inline-block text-[15px] text-white/90"
+              className="footer-link mt-4 inline-block text-[15px] text-white/90"
             >
               {quotationEmail}
             </a>
