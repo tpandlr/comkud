@@ -282,9 +282,12 @@ export const heroSlides = [
   },
 ] as const;
 
-export const quotationEmail = "info@comkud.co.zw";
+export const publicEmail = "info@comkud.co.zw";
+export const quotesEmail = "quotes@comkud.co.zw";
+export const quotationEmail = publicEmail;
 export const quotationHref = "/contact#quotation";
 export const quotationLabel = "Request a Quote";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://comkud.co.zw";
 
 export const nextSteps = processSteps.map((step) => ({
   number: step.number.replace(/^0/, ""),

@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { processSteps } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "How It Works | COMKUD Analytical Solutions",
+  title: "How it works",
   description: "Tell us your need, we scope and quote, we deliver, you receive results.",
 };
 

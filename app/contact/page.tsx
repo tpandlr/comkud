@@ -1,42 +1,34 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { PageHero } from "@/components/PageHero";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
 import { SplitLine } from "@/components/MotionText";
-import { companyAddress, nextSteps, quotationEmail } from "@/lib/content";
+import { companyAddress, nextSteps, publicEmail } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Contact Comkud Analytical Solutions",
-  description: "Request a quote or ask a question. Visit us at 7557 Millennium Park, Zimbabwe.",
+  title: "Contact",
+  description:
+    "Request a quote for emissions testing, environmental monitoring or consultancy. Email info@comkud.co.zw.",
 };
 
-async function QuoteFormWithStatus({
-  searchParams,
-}: {
-  searchParams: PageProps<"/contact">["searchParams"];
-}) {
-  const params = await searchParams;
-  return <QuoteForm sent={params.sent === "1"} />;
-}
-
-export default function ContactPage(props: PageProps<"/contact">) {
+export default function ContactPage() {
   return (
     <main>
       <PageHero
         title="Get in touch"
         body="Have a sample to test, a product to source or a technical question? We’d like to hear from you."
-        secondaryHref={`mailto:${quotationEmail}`}
-        secondaryLabel={`Email ${quotationEmail}`}
+        secondaryHref={`mailto:${publicEmail}`}
+        secondaryLabel={`Email ${publicEmail}`}
       />
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-[1320px] items-start gap-10 px-4 py-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:px-10">
-          <Suspense fallback={<QuoteForm />}>
-            <QuoteFormWithStatus searchParams={props.searchParams} />
-          </Suspense>
+          <QuoteForm />
           <Reveal>
             <p className="text-[14px] text-on-surface-variant">{companyAddress}</p>
+            <p className="mt-2 text-[14px] font-medium text-primary">
+              <a href={`mailto:${publicEmail}`}>{publicEmail}</a>
+            </p>
             <SplitLine
               as="h2"
               className="font-headline mt-6 text-[32px] font-bold text-primary"

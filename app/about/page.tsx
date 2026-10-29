@@ -6,9 +6,9 @@ import { SplitLine } from "@/components/MotionText";
 import { commitments, companyAddress, missionVision, quotationEmail, whoWeAre } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About Us | COMKUD Analytical Solutions",
+  title: "About",
   description:
-    "Learn about Comkud's vision, mission and values. Analytical and chemical expertise in Zimbabwe.",
+    "COMKUD Analytical Solutions is a Zimbabwean environmental consultancy focused on emissions monitoring, compliance and technical support.",
 };
 
 export default function AboutPage() {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { CtaBand } from "@/components/CtaBand";
@@ -19,6 +20,12 @@ import {
 } from "@/lib/content";
 
 const iconStyle = { fontVariationSettings: "'FILL' 1" } as const;
+
+export const metadata: Metadata = {
+  title: "Environmental Consultancy Zimbabwe",
+  description:
+    "Air emissions testing, environmental monitoring, consultancy, laboratory analysis and training from COMKUD Analytical Solutions.",
+};
 
 export default function Home() {
   return (

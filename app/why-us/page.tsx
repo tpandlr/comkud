@@ -6,9 +6,9 @@ import { SplitLine } from "@/components/MotionText";
 import { advantages, processSteps } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Why Comkud | COMKUD Analytical Solutions",
+  title: "Why Comkud",
   description:
-    "Scientific rigour, an integrated offering, practical focus, local presence in Zimbabwe, and clear communication.",
+    "Scientific rigour, local presence in Zimbabwe, and clear reporting for environmental consultancy and emissions testing.",
 };
 
 const iconStyle = { fontVariationSettings: "'FILL' 1" } as const;

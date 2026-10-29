@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { commitments } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Safety & Quality | COMKUD Analytical Solutions",
+  title: "Safety and quality",
   description: "Safe practice for our people, clients and environment.",
 };
 

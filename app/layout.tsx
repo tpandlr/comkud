@@ -15,11 +15,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "COMKUD Analytical Solutions",
+  metadataBase: new URL("https://comkud.co.zw"),
+  title: {
+    default: "COMKUD Analytical Solutions | Environmental Consultancy Zimbabwe",
+    template: "%s | COMKUD Analytical Solutions",
+  },
   description:
-    "Laboratory testing, chemical supply, equipment installation and technical consulting for Zimbabwean industry.",
+    "Environmental consultancy, air emissions monitoring, laboratory analysis and technical training in Zimbabwe.",
   icons: {
     icon: "/images/logo.jpg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_ZW",
+    url: "https://comkud.co.zw",
+    siteName: "COMKUD Analytical Solutions",
   },
 };
 

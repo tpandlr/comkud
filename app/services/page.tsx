@@ -6,7 +6,7 @@ import { SitePhotos } from "@/components/SitePhotos";
 import { services } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Services | COMKUD Analytical Solutions",
+  title: "Services",
   description:
     "Air emissions monitoring, environmental monitoring, consultancy, laboratory analysis, training and technical reporting.",
 };

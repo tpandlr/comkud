@@ -5,9 +5,9 @@ import { Reveal } from "@/components/Reveal";
 import { industries } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | COMKUD Analytical Solutions",
+  title: "Industries",
   description:
-    "Analytical support for mining, agriculture, manufacturing, food, pharmaceuticals, energy and research.",
+    "Environmental consultancy and emissions monitoring for mining, agriculture, manufacturing, food, energy and research in Zimbabwe.",
 };
 
 export default function IndustriesPage() {

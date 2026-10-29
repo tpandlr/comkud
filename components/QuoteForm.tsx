@@ -1,28 +1,31 @@
-import { quotationEmail, services } from "@/lib/content";
+"use client";
 
-const neededServices = [
-  ...services.map((service) => service.title),
-  "Other",
-];
+import { useEffect, useState } from "react";
+import { publicEmail, quotesEmail, services, siteUrl } from "@/lib/content";
 
-type QuoteFormProps = Readonly<{
-  sent?: boolean;
-}>;
+const neededServices = [...services.map((service) => service.title), "Other"];
 
 const field =
   "w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3 text-[14px] text-primary outline-none transition-[border-color,box-shadow,background-color] duration-200 focus:border-action focus:bg-white focus:shadow-[0_0_0_4px_rgba(13,71,161,0.12)]";
 
 const selectField = `${field} appearance-none bg-[length:16px_16px] bg-[right_12px_center] bg-no-repeat pr-10`;
 
-export function QuoteForm({ sent = false }: QuoteFormProps) {
+export function QuoteForm() {
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setSent(params.get("sent") === "1");
+  }, []);
+
   if (sent) {
     return (
       <div id="quotation" className="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-28px_rgba(15,40,78,0.35)] sm:p-8">
         <h3 className="font-headline text-[22px] font-semibold text-primary">Enquiry received</h3>
         <p className="mt-2 text-[14px] text-slate-500">
           Thank you. We’ve received your enquiry and will respond. You can also email{" "}
-          <a href={`mailto:${quotationEmail}`} className="text-primary underline-offset-2 hover:underline">
-            {quotationEmail}
+          <a href={`mailto:${publicEmail}`} className="text-primary underline-offset-2 hover:underline">
+            {publicEmail}
           </a>
           .
         </p>
@@ -30,26 +33,24 @@ export function QuoteForm({ sent = false }: QuoteFormProps) {
     );
   }
 
-  const nextUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/contact?sent=1#quotation`;
-
   return (
     <form
       id="quotation"
-      action={`https://formsubmit.co/${quotationEmail}`}
+      action={`https://formsubmit.co/${quotesEmail}`}
       method="POST"
       className="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-28px_rgba(15,40,78,0.35)] sm:p-8"
     >
       <input type="hidden" name="_subject" value="Enquiry — COMKUD Analytical Solutions" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value={nextUrl} />
+      <input type="hidden" name="_next" value={`${siteUrl}/contact?sent=1#quotation`} />
       <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <h3 className="font-headline text-[22px] font-semibold text-primary">Request a Quote</h3>
       <p className="mt-2 text-[14px] text-slate-500">
-        Tell us what you need to test, make or measure. Submits to{" "}
-        <a href={`mailto:${quotationEmail}`} className="text-primary underline-offset-2 hover:underline">
-          {quotationEmail}
+        Tell us what you need to test, make or measure. Replies go to{" "}
+        <a href={`mailto:${publicEmail}`} className="text-primary underline-offset-2 hover:underline">
+          {publicEmail}
         </a>
         .
       </p>
@@ -99,10 +100,7 @@ export function QuoteForm({ sent = false }: QuoteFormProps) {
           <textarea required name="message" rows={5} className={`${field} resize-y`} />
         </label>
       </div>
-      <button
-        type="submit"
-        className="btn btn-primary mt-6"
-      >
+      <button type="submit" className="btn btn-primary mt-6">
         Send Enquiry
       </button>
     </form>
