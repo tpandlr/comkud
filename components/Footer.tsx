@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { QuoteCta } from "@/components/QuoteCta";
-import { companyAddress, navLinks, quotationEmail, services, tagline } from "@/lib/content";
+import { companyAddress, navLinks, phones, quotationEmail, services, tagline } from "@/lib/content";
 
 export function Footer() {
   return (
@@ -50,6 +50,15 @@ export function Footer() {
           >
             {quotationEmail}
           </a>
+          <ul className="mt-4 space-y-2 text-[14px] text-white/80">
+            {phones.map((phone) => (
+              <li key={phone.href}>
+                <a href={phone.href} className="footer-link hover:text-white">
+                  {phone.display}
+                </a>
+              </li>
+            ))}
+          </ul>
           <QuoteCta variant="footer" />
         </div>
       </div>

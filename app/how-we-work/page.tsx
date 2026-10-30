@@ -15,6 +15,7 @@ export default function HowWeWorkPage() {
       <PageHero
         title="How it works"
         body="Tell us what you need to test, make or measure. We’ll tell you how we can help."
+        image="/images/field-analysis.jpg"
       />
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
         <Reveal>

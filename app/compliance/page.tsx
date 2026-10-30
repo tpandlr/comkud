@@ -12,7 +12,11 @@ export const metadata: Metadata = {
 export default function CompliancePage() {
   return (
     <main>
-      <PageHero title="Safety & quality" body="Safe practice for our people, clients and environment." />
+      <PageHero
+        title="Safety & quality"
+        body="Safe practice for our people, clients and environment."
+        image="/images/env-workers.jpg"
+      />
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
         <Reveal>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

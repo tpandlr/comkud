@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { QuoteCta } from "@/components/QuoteCta";
 import { SplitLine } from "@/components/MotionText";
 import { Reveal } from "@/components/Reveal";
@@ -12,9 +13,15 @@ export function CtaBand({ title, button = true }: CtaBandProps) {
   return (
     <section className="bg-surface px-4 pb-6 pt-4 lg:px-10 lg:pb-8">
       <Reveal className="relative mx-auto max-w-[1320px] overflow-hidden rounded-3xl bg-primary px-6 py-12 text-white shadow-[0_24px_60px_-28px_rgba(11,25,44,0.45)] sm:px-10 lg:px-14 lg:py-16">
-        <div className="pointer-events-none absolute -right-16 top-0 h-56 w-56 rounded-full bg-ochre/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 left-1/4 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
-        <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+        <Image
+          src="/images/env-river.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="1320px"
+        />
+        <div className="absolute inset-0 bg-primary/82" />
+        <div className="relative z-10 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
             <p className="eyebrow text-ochre">Talk to our team</p>
             <SplitLine

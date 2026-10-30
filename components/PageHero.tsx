@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { HeroSlideshow } from "@/components/HeroSlideshow";
 import { Fade, SplitLine } from "@/components/MotionText";
@@ -6,6 +7,7 @@ import { QuoteCta } from "@/components/QuoteCta";
 type PageHeroProps = Readonly<{
   title: string;
   body: string;
+  image?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
 }>;
@@ -13,12 +15,21 @@ type PageHeroProps = Readonly<{
 export function PageHero({
   title,
   body,
+  image,
   secondaryHref = "/services",
   secondaryLabel = "Explore Our Services",
 }: PageHeroProps) {
   return (
     <section className="relative min-h-[42vh] overflow-hidden bg-deep text-white lg:min-h-[380px]">
-      <HeroSlideshow />
+      {image ? (
+        <>
+          <Image src={image} alt="" fill priority className="object-cover" sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-ink/78 via-deep/50 to-deep/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-deep/25" />
+        </>
+      ) : (
+        <HeroSlideshow />
+      )}
       <div className="relative z-10 mx-auto max-w-[1320px] px-4 pb-16 pt-24 lg:px-10 lg:pb-20 lg:pt-28">
         <SplitLine
           as="h1"

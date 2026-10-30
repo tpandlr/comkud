@@ -170,7 +170,7 @@ export default function Home() {
             text="Emissions monitoring, environmental consultancy and the work around it"
           />
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, i) => (
+            {services.map((service) => (
               <Link
                 key={service.title}
                 href="/services"
@@ -179,13 +179,7 @@ export default function Home() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">
                   <span className="material-symbols-outlined text-[26px]">{service.icon}</span>
                 </span>
-                <p className="eyebrow mt-5 text-secondary">
-                  {service.emphasis === "primary" ? "Primary" : "Also offered"} 0{i + 1}
-                </p>
-                <h3 className="font-headline mt-1 text-[20px] font-bold text-primary">{service.title}</h3>
-                <p className="mt-3 flex-1 text-[14px] leading-relaxed text-on-surface-variant">
-                  {service.summary}
-                </p>
+                <h3 className="font-headline mt-5 text-[20px] font-bold text-primary">{service.title}</h3>
                 <span className="hover-kicker mt-5 border-t border-surface-container pt-4 text-[14px] font-semibold text-secondary">
                   Learn more
                   <span className="material-symbols-outlined text-[16px]">arrow_forward</span>

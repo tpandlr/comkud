@@ -17,6 +17,7 @@ export default function ServicesPage() {
       <PageHero
         title="Services"
         body="Air emissions testing and environmental monitoring first, with consultancy, laboratory analysis, training and technical reporting around them."
+        image="/images/stacks.png"
         secondaryHref="/industries"
         secondaryLabel="Industries"
       />
@@ -24,7 +25,7 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
         <Reveal>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {services.map((service, i) => (
+            {services.map((service) => (
               <article
                 key={service.title}
                 className="stagger-item card-lift rounded-2xl border border-surface-container bg-white p-7"
@@ -32,10 +33,7 @@ export default function ServicesPage() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
                   <span className="material-symbols-outlined text-[26px]">{service.icon}</span>
                 </span>
-                <p className="eyebrow mt-5 text-secondary">
-                  {service.emphasis === "primary" ? "Primary" : "Also offered"} 0{i + 1}
-                </p>
-                <h2 className="font-headline mt-2 text-[22px] font-bold text-primary">{service.title}</h2>
+                <h2 className="font-headline mt-5 text-[22px] font-bold text-primary">{service.title}</h2>
                 <p className="mt-2 text-[14px] leading-relaxed text-on-surface-variant">{service.summary}</p>
                 <ul className="mt-4 space-y-2 text-[14px] text-on-surface-variant">
                   {service.points.map((point) => (

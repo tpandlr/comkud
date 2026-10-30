@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
 import { SplitLine } from "@/components/MotionText";
-import { companyAddress, nextSteps, publicEmail } from "@/lib/content";
+import { companyAddress, nextSteps, phones, publicEmail } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,6 +17,7 @@ export default function ContactPage() {
       <PageHero
         title="Get in touch"
         body="Have a sample to test, a product to source or a technical question? We’d like to hear from you."
+        image="/images/env-water.jpg"
         secondaryHref={`mailto:${publicEmail}`}
         secondaryLabel={`Email ${publicEmail}`}
       />
@@ -29,6 +30,13 @@ export default function ContactPage() {
             <p className="mt-2 text-[14px] font-medium text-primary">
               <a href={`mailto:${publicEmail}`}>{publicEmail}</a>
             </p>
+            <ul className="mt-4 space-y-2 text-[14px] font-medium text-primary">
+              {phones.map((phone) => (
+                <li key={phone.href}>
+                  <a href={phone.href}>{phone.display}</a>
+                </li>
+              ))}
+            </ul>
             <SplitLine
               as="h2"
               className="font-headline mt-6 text-[32px] font-bold text-primary"

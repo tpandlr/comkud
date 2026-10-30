@@ -16,7 +16,11 @@ const iconStyle = { fontVariationSettings: "'FILL' 1" } as const;
 export default function WhyUsPage() {
   return (
     <main>
-      <PageHero title="Why Comkud" body="A practical analytical partner in Zimbabwe." />
+      <PageHero
+        title="Why Comkud"
+        body="A practical analytical partner in Zimbabwe."
+        image="/images/env-team.jpg"
+      />
 
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
         <Reveal>

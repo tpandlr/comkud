@@ -214,7 +214,7 @@ export const advantages = [
 export const whoWeAre = {
   title: "Who we are",
   paragraphs: [
-    "Comkud Analytical Solutions is a Zimbabwean environmental consultancy based at 7557 Millennium Park. Our primary work is environmental consultancy and emissions monitoring, supported by laboratory analysis, training and technical services, so businesses can operate with confidence and meet their environmental requirements.",
+    "Comkud Analytical Solutions is a Zimbabwean environmental consultancy. Our primary work is environmental consultancy and emissions monitoring, supported by laboratory analysis, training and technical services, so businesses can operate with confidence and meet their environmental requirements.",
   ],
 } as const;
 
@@ -284,6 +284,12 @@ export const heroSlides = [
 
 export const publicEmail = "info@comkud.co.zw";
 export const quotesEmail = "quotes@comkud.co.zw";
+export const phones = [
+  { display: "+263 78 458 1892", href: "tel:+263784581892" },
+  { display: "+263 78 592 1417", href: "tel:+263785921417" },
+  { display: "+263 78 244 0279", href: "tel:+263782440279" },
+  { display: "+263 71 627 3732", href: "tel:+263716273732" },
+] as const;
 export const quotationEmail = publicEmail;
 export const quotationHref = "/contact#quotation";
 export const quotationLabel = "Request a Quote";
@@ -320,8 +326,8 @@ export const equipmentPhotos = [
 
 export const fieldPhotos = [
   {
-    src: "/images/stack-sampling.jpg",
-    alt: "Technician sampling stack emissions on site",
+    src: "/images/engineer.png",
+    alt: "Technician in full PPE sampling stack emissions",
     caption: "Stack sampling",
   },
   {

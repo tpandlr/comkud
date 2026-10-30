@@ -16,6 +16,7 @@ export default function IndustriesPage() {
       <PageHero
         title="Industries"
         body="Every sector has its own quality demands. Comkud’s analytical services support the industries driving Zimbabwe’s economy."
+        image="/images/env-river.jpg"
       />
 
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">

@@ -3,7 +3,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SplitLine } from "@/components/MotionText";
-import { commitments, companyAddress, missionVision, quotationEmail, whoWeAre } from "@/lib/content";
+import { commitments, companyAddress, missionVision, phones, quotationEmail, whoWeAre } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,7 +14,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <PageHero title="About Us" body="Analytical and chemical expertise in Zimbabwe." />
+      <PageHero
+        title="About Us"
+        body="Analytical and chemical expertise in Zimbabwe."
+        image="/images/env-workers.jpg"
+      />
 
       <section className="mx-auto max-w-[1320px] px-4 py-16 lg:px-10">
         <Reveal>
@@ -35,7 +39,16 @@ export default function AboutPage() {
             </div>
             <div className="stagger-item rounded-2xl border border-surface-container bg-white p-5 sm:col-span-2">
               <dt className="eyebrow text-outline">Contact</dt>
-              <dd className="mt-2 font-semibold text-primary">{quotationEmail}</dd>
+              <dd className="mt-2 font-semibold text-primary">
+                <a href={`mailto:${quotationEmail}`}>{quotationEmail}</a>
+                <ul className="mt-3 space-y-1 font-medium">
+                  {phones.map((phone) => (
+                    <li key={phone.href}>
+                      <a href={phone.href}>{phone.display}</a>
+                    </li>
+                  ))}
+                </ul>
+              </dd>
             </div>
           </dl>
         </Reveal>
